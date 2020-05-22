@@ -1,1 +1,0 @@
-["sbt.Task[scala.collection.immutable.Map[java.lang.String, scala.collection.Seq[scala.Tuple2[java.nio.file.Path, sbt.nio.FileStamp]]]]",{"2.12.7":{"hashes":[["/Users/soh/02_prog/sat/src/main/scala/kobe_cs18a/sat/CNF.scala","ba58a08238787c529aa20416f32a0f9d4a3916ac"]],"lastModifiedTimes":[]}}]

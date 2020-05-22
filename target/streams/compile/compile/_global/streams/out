@@ -1,7 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/soh/02_prog/sat/src/main/scala/kobe_cs18a/sat/CNF.scala:27:12: double definition:[0m
-[0m[[0m[31merror[0m] [0m[0mdef apply(lits: Seq[kobe_cs18a.sat.Lit]): kobe_cs18a.sat.Cl at line 44 and[0m
-[0m[[0m[31merror[0m] [0m[0mcase def apply(lits: kobe_cs18a.sat.Lit*): kobe_cs18a.sat.Cl at line 27[0m
-[0m[[0m[31merror[0m] [0m[0mhave same type after erasure: (lits: Seq)kobe_cs18a.sat.Cl[0m
-[0m[[0m[31merror[0m] [0m[0mcase class Cl(lits: Lit*) {[0m
-[0m[[0m[31merror[0m] [0m[0m           ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
