@@ -92,12 +92,12 @@ object Cl {
 }
 
 
-case class CNF(clauses: Seq[Cl]) {
-  def add(that: CNF): CNF = CNF(clauses ++ that.clauses)
-  def add(clause: Cl): CNF = CNF(clauses :+ clause) // 末尾追加なので遅い．簡単のため．
+case class CNF(clauses: Cl*) {
+  def add(that: CNF): CNF = CNF(clauses ++ that.clauses: _*)
+  def add(clause: Cl): CNF = CNF(clauses :+ clause: _*) // 末尾追加なので遅い．簡単のため．
 
-  def rm(that: CNF): CNF = CNF(clauses.diff(that.clauses))
-  def rm(cl: Cl): CNF = CNF(clauses.diff(Seq(cl)))
+  def rm(that: CNF): CNF = CNF(clauses.diff(that.clauses): _*)
+  def rm(cl: Cl): CNF = CNF(clauses.diff(Seq(cl)): _*)
 
   def ++ (that: CNF): CNF = add(that)
   def + (cl: Cl): CNF = add(cl)
@@ -115,6 +115,8 @@ case class CNF(clauses: Seq[Cl]) {
 
 object CNF {
   import scala.io.Source
+
+  def apply(clauses: Iterable[Cl]) = new CNF(clauses.toSeq: _*)
 
   def load(lines: Seq[String]): CNF = {
     val cnf = for {
