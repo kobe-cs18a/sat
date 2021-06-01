@@ -34,7 +34,7 @@ case class BinaryEncoder() {
 object EncoderTest {
   def main(args: Array[String]) = {
 
-    val example = ExactOne(Seq("x1", "x2", "x3", "x4", "x5"))
+    val example = ExactOne(Seq("1", "2", "3"))
 
     println(s"ExactOne: $example")
 

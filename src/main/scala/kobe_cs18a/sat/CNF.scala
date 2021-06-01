@@ -116,10 +116,12 @@ case class CNF(clauses: Cl*) {
 
 
   def show(): Unit = clauses.foreach{cl =>
-    println(cl.lits.mkString(" "))
+    println(cl.lits.map(l => if (l.polarity) s"${l.name}" else s"-${l.name}").mkString(""," "," 0"))
     }
 
-  def export2DimacsFile(fileName: String) = {
+  def export2DimacsFile(fileName: String): Unit = {
+    // 変数(String) と dimacs の変数番号の関係を記述した map
+    // dimacs file を出力する
     ???
   }
 
