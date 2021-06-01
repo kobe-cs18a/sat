@@ -3,6 +3,15 @@ package kobe_cs18a.sat
 
 object Example {
 
+  def test(cnf: CNF, lit0: Lit): CNF = {
+    val conditioned = for {
+      cl0 <- cnf.clauses
+      if !cl0.lits.contains(lit0) // 条件1 節の削除
+      c = cl0 - ~lit0 // 条件2と3 リテラルの削除
+    } yield c
+    CNF(conditioned)
+  }
+
   /**
     * HB of SAT の 101 ページの conditioning
     * cnf の A による条件付 (バージョン1)
@@ -110,6 +119,10 @@ case class CNF(clauses: Cl*) {
     println(cl.lits.mkString(" "))
     }
 
+  def export2DimacsFile(fileName: String) = {
+    ???
+  }
+
   override def toString = clauses.mkString("CNF(",",",")")
 }
 
@@ -130,5 +143,6 @@ object CNF {
 
   def load(fileName: String): CNF =
     load(Source.fromFile(fileName).getLines.toSeq)
+
 
 }
