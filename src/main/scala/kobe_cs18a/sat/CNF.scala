@@ -124,6 +124,7 @@ case class CNF(clauses: Cl*) {
   }
 
   override def toString = clauses.mkString("CNF(",",",")")
+
 }
 
 object CNF {
